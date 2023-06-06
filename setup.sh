@@ -1,6 +1,10 @@
 sudo apt update
 sudo apt upgrade
 
+sudo apt install xclip
+alias "c=xclip"
+alias "v=xclip -o"
+
 # SmartCard daemon - used as an interface between OpenPGP and hardware keys
 sudo apt install scdaemon
 
@@ -11,10 +15,10 @@ sudo apt install git
 sudo apt install keepassxc
 
 # Note taking application
-sudo snap install xournalpp
+sudo apt install xournalpp
 
 # E-reader application
-sudo snap install foliate
+sudo apt install foliate
 
 # Docker CLI
 sudo apt-get remove docker docker-engine docker.io containerd runc
