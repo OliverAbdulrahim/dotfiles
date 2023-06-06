@@ -7,7 +7,12 @@ and work with Debian-based Linux installations.
 Here's an overview of the directories and files in this repository:
 
 ```
-├── README.md
-├── setup.sh                  # script that installs apps, configures git, Firefox, GPG config
-└── yubikey-keygrip-reset.sh  # allows you to use multiple YubiKeys with the same private keys
+├── README.md                     # this file!
+├── keyboard                      # configuration files for keyboards
+│   ├── keychron_q1_default.json
+│   ├── keychron_q1_swapped.json
+│   └── q1_us_knob_ver2.04.json
+├── scripts
+│   └── yubikey-keygrip-reset.sh  # allows you to use multiple YubiKeys with the same private GPG keys
+└── setup.sh                      # script that installs apps, configures git, Firefox, GPG, SSH
 ```
