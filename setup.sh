@@ -78,7 +78,7 @@ git config --global user.email $git_user_email
 git config --global user.name $git_user_name
 
 # GPG configuration
-echo "To trust keys stored in your YubiKey(s), you'll need to run gpg --edit-key, then trust" 
+echo "To trust keys stored in your YubiKey(s), you'll need to run gpg --edit-key "$git_user_email", then trust"
 
 # YubiKey as sudo configuration
 sudo apt-get install libpam-u2f
