@@ -1,11 +1,22 @@
 sudo apt update
 sudo apt upgrade
 
+# copy-paste configuration
 sudo apt install xclip
-
 echo alias "c=xclip -selection clipboard" >> ~/.bash_aliases
 echo alias "v=xclip -o" >> ~/.bash_aliases
+
+# Neovim configuration
+wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
+sudo unzip -d JetBrainsMono-2.304.zip /usr/share/
+fc-cache -f -v
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/bin/nvim
 echo "alias vim=nvim" >> ~/.bash_aliases
+
+git clone git@github.com:nvchad/nvchad ~/.config/nvim --depth=1
 
 # SmartCard daemon - used as an interface between OpenPGP and hardware keys
 sudo apt install scdaemon
