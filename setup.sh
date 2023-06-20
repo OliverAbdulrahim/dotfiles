@@ -6,17 +6,22 @@ sudo apt install xclip
 echo alias "c=xclip -selection clipboard" >> ~/.bash_aliases
 echo alias "v=xclip -o" >> ~/.bash_aliases
 
-# Neovim configuration
-wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
-sudo unzip -d JetBrainsMono-2.304.zip /usr/share/
-fc-cache -f -v
+# Kitty terminal emulator
+sudo apt install kitty
+cp /usr/share/doc/kitty/examples/kitty.conf ~/.config/kitty/
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sudo update-alternatives --config x-terminal-emulator
 
+git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes --depth 1
+rm ~/.config/kitty/theme.conf && ln -s ~/.config/kitty/kitty-themes/themes/ayu_mirage.conf ~/.config/kitty/theme.conf
+
+# Neovim configuration
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/bin/nvim
 echo "alias vim=nvim" >> ~/.bash_aliases
 
-git clone git@github.com:nvchad/nvchad ~/.config/nvim --depth=1
+git clone https://github.com:nvchad/nvchad ~/.config/nvim --depth 1
 
 # SmartCard daemon - used as an interface between OpenPGP and hardware keys
 sudo apt install scdaemon
