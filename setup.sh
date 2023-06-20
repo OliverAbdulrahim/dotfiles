@@ -2,8 +2,10 @@ sudo apt update
 sudo apt upgrade
 
 sudo apt install xclip
-alias "c=xclip"
-alias "v=xclip -o"
+
+echo alias "c=xclip -selection clipboard" >> ~/.bash_aliases
+echo alias "v=xclip -o" >> ~/.bash_aliases
+echo "alias vim=nvim" >> ~/.bash_aliases
 
 # SmartCard daemon - used as an interface between OpenPGP and hardware keys
 sudo apt install scdaemon
