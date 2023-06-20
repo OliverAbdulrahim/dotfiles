@@ -8,16 +8,21 @@ echo alias "v=xclip -o" >> ~/.bash_aliases
 
 # Kitty terminal emulator
 curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
-sudo unzip -d JetBrainsMono.zip /usr/share/
+sudo unzip JetBrainsMono.zip -d /usr/share/fonts
 fc-cache -f -v
 
 sudo apt install kitty
+
+# Install Catppuccin Theme globally
+
+# TODO: provide a conf file in this repo
 cp /usr/share/doc/kitty/examples/kitty.conf ~/.config/kitty/
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo update-alternatives --config x-terminal-emulator
 
-git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes --depth 1
-rm ~/.config/kitty/theme.conf && ln -s ~/.config/kitty/kitty-themes/themes/ayu_mirage.conf ~/.config/kitty/theme.conf
+# TODO: provide a theme conf in this repo
+git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty/themes --depth 1
+rm ~/.config/kitty/theme.conf && ln -s ~/.config/kitty/themes/ayu_mirage.conf ~/.config/kitty/theme.conf
 
 # Neovim configuration
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
