@@ -15,6 +15,10 @@ sudo apt install kitty
 
 # Install Catppuccin Theme globally
 
+git clone https://github.com/catppuccin/cursors.git
+sudo unzip cursors/cursors/Catppuccin-Mocha-Dark-Cursors.zip -d /usr/share/icons/
+gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Mocha-Dark-Cursors
+
 # TODO: provide a conf file in this repo
 cp /usr/share/doc/kitty/examples/kitty.conf ~/.config/kitty/
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
